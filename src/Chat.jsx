@@ -8,7 +8,6 @@ import {
   Button,
   Paper,
   Typography,
-  Tabs,
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { useEffect, useState } from "react";

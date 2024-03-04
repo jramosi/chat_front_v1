@@ -14,8 +14,8 @@ import {
   Stack,
   Container,
 } from "@mui/material";
-
-const socket = io.connect("http://localhost:3001");
+const URL = process.env.URL_BACKEND;
+const socket = io.connect(URL);
 function App() {
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
