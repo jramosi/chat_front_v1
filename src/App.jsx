@@ -15,13 +15,12 @@ import {
   Container,
 } from "@mui/material";
 /* const URL = process.env.URL_BACKEND; */
-const socket = io.connect(
-  "https://api.render.com/deploy/srv-cnj4uv6n7f5s73ftbnug?key=6I1e26201tQ"
-);
+const socket = io.connect(import.meta.env.URL_BACKEND);
 function App() {
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
   const [showChat, setShowChat] = useState(false);
+  console.log(import.meta.env.VITE_URL_BACKEND);
 
   const joinRoom = () => {
     if (username != "" && room != "") {
