@@ -41,12 +41,6 @@ export const Chat = ({ socket, username, room }) => {
     return () => socket.off("receive_message", messaHandle);
   }, [socket]);
 
-  const presionadoEnter = (e) => {
-    if (e.key === "Enter") {
-      console.log("presionado");
-    }
-  };
-
   return (
     <Box display={"flex"}>
       <Card sx={{ width: "100%" }}>
