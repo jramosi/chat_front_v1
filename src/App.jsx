@@ -15,7 +15,7 @@ import {
   Container,
 } from "@mui/material";
 /* const URL = process.env.URL_BACKEND; */
-const socket = io.connect("http://localhost:3001/");
+const socket = io.connect("https://chat-server-v1.onrender.com");
 function App() {
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
