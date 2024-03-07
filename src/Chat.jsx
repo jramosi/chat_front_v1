@@ -49,7 +49,7 @@ export const Chat = ({ socket, username, room }) => {
 
       <Divider />
       <ScrollToBottom>
-        <CardContent variant="tabs" sx={{ height: 400 }}>
+        <CardContent variant="tabs" sx={{ height: 350 }}>
           {messagesList.map((item, i) => {
             const bgcolor = username === item.author ? "#DCF8C6" : " #a2d9ce  ";
             return (
