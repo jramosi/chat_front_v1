@@ -1,8 +1,7 @@
 #root {
   width: 100vw;
   height: 100vh;
+  overflow: scroll;
   background-color: antiquewhite;
-  padding-top: 30px;
-
-
+  padding-top: 20px;
 }

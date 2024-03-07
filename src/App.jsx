@@ -31,6 +31,86 @@ function App() {
 
   return (
     <Container>
+      <Card sx={{ width: "100%" }}>
+        <CardHeader title="Unirme al Chat" align="left" />
+        <Divider />
+        <CardContent>
+          <Box>
+            <Stack spacing={2}>
+              <TextField
+                fullWidth
+                name="username"
+                label="Nombre de Usuario"
+                type="text"
+                onChange={(e) => setUsername(e.target.value)}
+              />
+              <TextField
+                fullWidth
+                name="room"
+                type="text"
+                label="Sala"
+                onChange={(e) => setRoom(e.target.value)}
+              />
+              <Button
+                onClick={joinRoom}
+                variant="contained"
+                color="primary"
+                sx={{ width: "300px" }}
+              >
+                Unirse a la conversacion
+              </Button>
+            </Stack>
+          </Box>
+        </CardContent>
+
+        <Box sx={{ p: 2 }}>
+          <Typography color="text.secondary" variant="body2">
+            Ponga el nombre de usuario que desee y el numero o nombre de sala.
+            <br />
+            Proyecto desarrollado con socket-io y react
+          </Typography>
+        </Box>
+      </Card>
+      <Card sx={{ width: "100%" }}>
+        <CardHeader title="Unirme al Chat" align="left" />
+        <Divider />
+        <CardContent>
+          <Box>
+            <Stack spacing={2}>
+              <TextField
+                fullWidth
+                name="username"
+                label="Nombre de Usuario"
+                type="text"
+                onChange={(e) => setUsername(e.target.value)}
+              />
+              <TextField
+                fullWidth
+                name="room"
+                type="text"
+                label="Sala"
+                onChange={(e) => setRoom(e.target.value)}
+              />
+              <Button
+                onClick={joinRoom}
+                variant="contained"
+                color="primary"
+                sx={{ width: "300px" }}
+              >
+                Unirse a la conversacion
+              </Button>
+            </Stack>
+          </Box>
+        </CardContent>
+
+        <Box sx={{ p: 2 }}>
+          <Typography color="text.secondary" variant="body2">
+            Ponga el nombre de usuario que desee y el numero o nombre de sala.
+            <br />
+            Proyecto desarrollado con socket-io y react
+          </Typography>
+        </Box>
+      </Card>
       <CssBaseline />
       {!showChat ? (
         <Card sx={{ width: "100%" }}>

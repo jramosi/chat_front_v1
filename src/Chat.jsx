@@ -63,7 +63,7 @@ export const Chat = ({ socket, username, room }) => {
                   elevation={4}
                   sx={{
                     margin: 2,
-                    padding: 2,
+                    padding: 1,
                     maxWidth: "80%",
                     width: "fit-content",
                     bgcolor,
