@@ -14,8 +14,8 @@ import {
   Stack,
   Container,
 } from "@mui/material";
-/* const URL = process.env.URL_BACKEND; */
-const socket = io.connect("https://chat-server-v1.onrender.com");
+const BACKEND_URL = import.meta.env.BACKEND_URL;
+const socket = io.connect(BACKEND_URL);
 function App() {
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
