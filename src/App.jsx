@@ -14,13 +14,13 @@ import {
   Stack,
   Container,
 } from "@mui/material";
-const BACKEND_URL = import.meta.env.BACKEND_URL;
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 const socket = io.connect(BACKEND_URL);
 function App() {
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
   const [showChat, setShowChat] = useState(false);
-
+  console.log(BACKEND_URL);
   const joinRoom = () => {
     if (username != "" && room != "") {
       socket.emit("join_room", room);
