@@ -11,10 +11,12 @@ import {
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { useEffect, useState } from "react";
+import ScrollToBottom from "react-scroll-to-bottom";
 
 export const Chat = ({ socket, username, room }) => {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messagesList, setMessagesList] = useState([]);
+  const [myUser, setmyUser] = useState(false);
   const sendMessage = async () => {
     if (username && currentMessage) {
       const info = {
@@ -46,39 +48,45 @@ export const Chat = ({ socket, username, room }) => {
       <CardHeader title={`Chat en Vivo  |   Sala: ${room}`} />
 
       <Divider />
-      <CardContent variant="tabs">
-        {messagesList.map((item, i) => {
-          return (
-            <Box
-              variant="div"
-              key={i}
-              display={"flex"}
-              justifyContent={username === item.author ? "right" : "left"}
-            >
-              <Paper
-                elevation={4}
-                sx={{
-                  margin: 2,
-                  padding: 2,
-                  maxWidth: "50%",
-                  width: "fit-content",
-                  bgcolor: "#DCF8C6",
-                }}
+      <ScrollToBottom>
+        <CardContent variant="tabs" sx={{ height: 400 }}>
+          {messagesList.map((item, i) => {
+            const bgcolor = username === item.author ? "#DCF8C6" : " #a2d9ce  ";
+            return (
+              <Box
+                variant="div"
+                key={i}
+                display={"flex"}
+                justifyContent={username === item.author ? "right" : "left"}
               >
-                <Box sx={{}}>
-                  <Typography variant="h6" fontWeight={"bold"}>
-                    {item.author}
-                  </Typography>
+                <Paper
+                  elevation={4}
+                  sx={{
+                    margin: 2,
+                    padding: 2,
+                    maxWidth: "80%",
+                    width: "fit-content",
+                    bgcolor,
+                  }}
+                >
+                  <Box>
+                    <Typography variant="h6" fontWeight={"bold"}>
+                      {item.author}
+                    </Typography>
 
-                  <Typography variant="p">{item.message}</Typography>
-
-                  <Typography>{item.time}</Typography>
-                </Box>
-              </Paper>
-            </Box>
-          );
-        })}
-      </CardContent>
+                    <Typography variant="p">{item.message}</Typography>
+                    <Box display={"flex"} justifyContent={"right"}>
+                      <Typography variant="p" fontSize={12}>
+                        {item.time}
+                      </Typography>
+                    </Box>
+                  </Box>
+                </Paper>
+              </Box>
+            );
+          })}
+        </CardContent>
+      </ScrollToBottom>
       <Paper
         sx={{
           mt: "20px",
